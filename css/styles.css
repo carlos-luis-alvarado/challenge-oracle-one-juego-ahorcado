@@ -1,0 +1,63 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+body{
+    background-color: #E9ECF8;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+a{
+    text-decoration: none;
+    color: black;
+    font-size: 1.5rem;
+}
+.header{
+    margin: 2rem;
+}
+.botones-inicio{
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.boton{
+    background-color: #0A3871;
+    border: 1px solid #0A3871;
+    border-radius: 2rem;
+    margin: 1rem;
+    padding: 4rem 7rem;
+    color: white;
+}
+.boton-palabra{
+    padding: 2rem;
+    background-color: #E9ECF8;
+    color: #0A3871;
+}
+/*Pagina agregar palabra*/
+.main-agregar-palabra{
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+}
+.agregar-palabra{
+    width: 60%;
+    height: 40%;
+    border: none;
+    resize: none;
+    font-size: 3rem;
+}
+.boton-guardar{
+    padding: 2rem;
+    background-color: #E9ECF8;
+    background-color: #0A3871;
+}
+/*Pagina juego*/
