@@ -7,6 +7,10 @@ html{
     box-sizing: border-box;
     font-size: 62.5%;
 }
+*:before,
+*:after {
+    box-sizing: inherit;
+}
 body{
     background-color: #E9ECF8;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -61,3 +65,32 @@ a{
     background-color: #0A3871;
 }
 /*Pagina juego*/
+/* 
+.guiones{
+    color: #0A3871;
+    letter-spacing: 10px;
+    font-size: 50px;
+} */
+.contenido-palabra{
+    line-height:.4;
+    
+}
+.guiones,.letras{
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+    font-size: 50px;
+    font-weight: 600;
+    column-gap: 10px;
+    
+}
+.letra{
+    
+}
+
+
+.guion{
+    border-bottom: 8px solid #0A3871;
+    padding: 10px 15px;   
+    
+}
