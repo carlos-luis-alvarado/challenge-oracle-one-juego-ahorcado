@@ -64,13 +64,6 @@ a{
     background-color: #E9ECF8;
     background-color: #0A3871;
 }
-/*Pagina juego*/
-/* 
-.guiones{
-    color: #0A3871;
-    letter-spacing: 10px;
-    font-size: 50px;
-} */
 .contenido-palabra{
     line-height:.4;
     
@@ -84,17 +77,11 @@ a{
     column-gap: 10px;
     
 }
-.letra{
-    
-}
-
-
 .guion{
     border-bottom: 8px solid #0A3871;
     padding: 10px 15px;   
     
 }
-
 .letras-ingresadas{
     letter-spacing: 10px;
 }

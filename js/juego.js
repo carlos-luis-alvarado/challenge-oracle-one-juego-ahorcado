@@ -33,6 +33,20 @@ function colocarGuiones() {
     }
 }
 
+function mensajeDeJuego(mensaje){
+    Swal.fire({
+        title: `${mensaje}`,
+        showClass: {
+            popup: 'animate__animated animate__fadeInDown',
+        },
+        hideClass: {
+            popup: 'animate__animated animate__fadeOutUp'
+        }
+    }).then(function() {
+        window.location = "../pages/juego.html";
+    });
+}
+
 let palabras = ['javascript', 'mundo', 'programacion', 'codigo', 'computadora'];
 let intento = 0;
 let juegoAhorcado = document.querySelector('#juego');
@@ -47,12 +61,8 @@ ctx.fillStyle = "rgb(200,0,0)";
 ctx.lineCap = 'round';
 
 function main() {
-
-
     cargarPalabras();
     colocarGuiones();
-
-
     let letrasIngresadas = []
     document.addEventListener('keydown', e => {
         let letrasJuego = document.querySelectorAll('.guion')
@@ -72,38 +82,14 @@ function main() {
                     }
                 }
                 if (bandera) {
-                   
-                    Swal.fire({
-                        title: 'Felicidades ,Ganaste!',
-                        showClass: {
-                            popup: 'animate__animated animate__fadeInDown',
-                        },
-                        hideClass: {
-                            popup: 'animate__animated animate__fadeOutUp'
-                        }
-                    }).then(function() {
-                        window.location = "../pages/juego.html";
-                    });
+                    mensajeDeJuego('Felicidades ,Ganaste!')
                 }
-
-
             } else {
                 graficar(movimietosPincel[intento], intento);
                 intento++;
                 if (intento > intentos) {
-                    Swal.fire({
-                        title: 'Fin del juego',
-                        showClass: {
-                            popup: 'animate__animated animate__fadeInDown',
-                        },
-                        hideClass: {
-                            popup: 'animate__animated animate__fadeOutUp'
-                        }
-                    }).then(function() {
-                        window.location = "../pages/juego.html";
-                    });
+                    mensajeDeJuego('Fin del juego')
                 }
-
             }
             letrasIngresadas.push(e.key.toUpperCase())
             let letrasIngresadasPorTeclado = document.querySelector('.letras-ingresadas')
@@ -111,5 +97,4 @@ function main() {
         }
     })
 }
-
 main();

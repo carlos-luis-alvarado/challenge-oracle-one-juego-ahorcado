@@ -15,5 +15,4 @@ botonGuardar.addEventListener('click', e => {
             'error'
         )
     }
-    
 })
