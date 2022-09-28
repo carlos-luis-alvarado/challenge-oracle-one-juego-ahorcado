@@ -1,61 +1,9 @@
-const canvas = document.getElementById('tutorial');
-const ctx = canvas.getContext('2d');
-ctx.lineWidth = 5
-ctx.fillStyle = "rgb(200,0,0)";
+let palabras = ['javascript', 'mundo', 'programacion', 'codigo', 'computadora'];
 
-ctx.lineCap = 'round';
-
-//base
-let movimietosPincel = [[150, 400, 350, 400], [200, 400, 200, 100], [200, 100, 300, 100], [300, 100, 300, 170], [300, 200, 30, 0], [300, 230, 300, 300], [300, 300, 270, 340], [300, 300, 330, 340], [300, 250, 270, 280], [300, 250, 330, 280]]
-// ctx.moveTo(150,400)
-// ctx.lineTo(350,400)
-// ctx.stroke()
-// //palo lateral
-// ctx.moveTo(200,400)
-// ctx.lineTo(200,100)
-// ctx.stroke()
-// //palo superior
-// ctx.moveTo(200,100)
-// ctx.lineTo(300,100)
-// ctx.stroke()
-// //cuerda
-// ctx.moveTo(300,100)
-// ctx.lineTo(300,170)
-// ctx.stroke()
-// //cabeza
-// ctx.beginPath();
-// ctx.arc(300, 200, 30, 0, Math.PI * 2, true); // Círculo externo
-
-// ctx.stroke()
-
-// //cuerpo
-// ctx.moveTo(300,230)
-// ctx.lineTo(300,300)
-// ctx.stroke()
-
-// //pie izquiedo
-// ctx.lineTo(270,340)
-// ctx.stroke()
-// //pie derecho
-// ctx.moveTo(300,300)
-
-// ctx.lineTo(330,340)
-// ctx.stroke()
-
-
-
-// //brazo izquierdo
-// ctx.moveTo(300,250)
-
-// ctx.lineTo(270,280)
-// ctx.stroke()
-
-
-// //brazo derecho
-// ctx.moveTo(300,250)
-
-// ctx.lineTo(330,280)
-// ctx.stroke()
+for (let i = 0; i < localStorage.length; i++) {
+    palabras.push(localStorage.getItem(i))
+    
+}
 
 function graficar([xm, ym, xp, yp], intento) {
     if (intento !== 4) {
@@ -72,7 +20,22 @@ function graficar([xm, ym, xp, yp], intento) {
 }
 const intentos = 8
 let intento = 0;
-const palabras = ['javascript', 'mundo', 'programacion', 'codigo', 'computadora']
+//const palabras = ['javascript', 'mundo', 'programacion', 'codigo', 'computadora']
+
+
+
+
+let juegoAhorcado = document.querySelector('#juego');
+
+const canvas = document.getElementById('tutorial');
+const ctx = canvas.getContext('2d');
+ctx.lineWidth = 5
+ctx.fillStyle = "rgb(200,0,0)";
+
+ctx.lineCap = 'round';
+
+//base
+let movimietosPincel = [[150, 400, 350, 400], [200, 400, 200, 100], [200, 100, 300, 100], [300, 100, 300, 170], [300, 200, 30, 0], [300, 230, 300, 300], [300, 300, 270, 340], [300, 300, 330, 340], [300, 250, 270, 280], [300, 250, 330, 280]]
 
 let palabra = palabras[Math.floor(Math.random() * (palabras.length))]
 console.log(palabra);
@@ -105,18 +68,18 @@ document.addEventListener('keydown', e => {
                     letrasJuego[i].textContent = palabra[i].toUpperCase()
                 }
             }
-            let bandera=true
+            let bandera = true
             for (let i = 0; i < letrasJuego.length; i++) {
-                if(letrasJuego[i].textContent==' '){
-                    bandera=false
+                if (letrasJuego[i].textContent == ' ') {
+                    bandera = false
                     break
                 }
             }
-            if(bandera){
+            if (bandera) {
                 let mensaje = document.querySelector('.mensaje')
                 mensaje.textContent = 'Felicidades , Ganaste!'
             }
-   
+
 
         } else {
             graficar(movimietosPincel[intento], intento);
@@ -128,6 +91,8 @@ document.addEventListener('keydown', e => {
 
         }
         letrasIngresadas.push(e.key.toUpperCase())
+        let letrasIngresadasPorTeclado =  document.querySelector('.letras-ingresadas')
+        letrasIngresadasPorTeclado.textContent = letrasIngresadasPorTeclado.textContent + e.key.toUpperCase()
     }
 
 

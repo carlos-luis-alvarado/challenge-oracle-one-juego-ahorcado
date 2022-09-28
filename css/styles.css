@@ -94,3 +94,7 @@ a{
     padding: 10px 15px;   
     
 }
+
+.letras-ingresadas{
+    letter-spacing: 10px;
+}
